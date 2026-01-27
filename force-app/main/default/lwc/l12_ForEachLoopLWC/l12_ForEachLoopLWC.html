@@ -1,0 +1,25 @@
+<!-- FOR EACH LOOP IN LWC KEY POINTERS
+1. To render a list of items, use for:each directive or the iterator directive to iterate over an array. Add the directive to a nested <template> tag that encloses the HTML elements you want to repeat. 
+2. Regardless of which directive you use , you must use a key directive to assign a unique ID to each item. When a list changes , the framework uses the key to rerender only the item that changed. the key in the template is used for performance optimization and isn't reflected in the DOM at run time.
+3. mainly we use for-Each with wire decorator.
+Note : For:Each loop and If:true both are used in Templates only
+-->
+
+<template>
+    <lightning-card title="ForEachLoop IN LWC">
+        <div class="slds-p-around_medium">
+        <!--When Data is returned successfully  -->
+        <template lwc:if={accounts}>
+            <template for:each={accounts} for:item="account">
+            <h3 key={account.Id}>{account.Name}</h3>
+            </template>
+        </template>
+        <!-- When encountered an error -->
+         <template lwc:if={error}>
+            <p style="color:red">Error loading accounts: {error.body.message}</p>
+         </template>
+
+         </div>
+    </lightning-card>
+    
+</template>

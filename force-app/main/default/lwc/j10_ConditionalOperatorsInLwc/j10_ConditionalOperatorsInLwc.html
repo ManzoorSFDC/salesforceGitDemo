@@ -1,0 +1,21 @@
+<!-- 
+1. To render HTML conditionally , add the if:true|false diective to a nested <template> tag that enclose the conditional content.
+2. The if:true|false ={property} directive binds data to the template and removes and inserts DOM elements based on whether the data is a truthy or falsy value.
+
+-->
+
+<template>
+    <lightning-card title="Render using If:true={Property}">
+        <div class="slds-p-around_medium">
+            <lightning-button variant="brand" label={onClickButtonLabel} onclick={handleClick} >
+            </lightning-button>
+        </div>
+
+    </lightning-card>
+    <template if:true={dataVisible}>
+    <lightning-card title="If/Else rendering">
+        {callProperty}
+    </lightning-card>
+    </template>
+    
+</template>

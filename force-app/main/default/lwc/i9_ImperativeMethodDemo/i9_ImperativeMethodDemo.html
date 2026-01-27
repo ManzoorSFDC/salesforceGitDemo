@@ -1,0 +1,32 @@
+<!-- 
+ 1. To control when the method invocation occurs(for example, in response to clicking a button),call the method imperatively.
+ 2. In LWC (Lightning Web Components), an imperative method refers to a way of calling an Apex method from JavaScript explicitly using a function, rather than wiring it automatically with decorators like @wire.
+ Key Characteristics of Imperative Method:
+ a) Uses import to bring in the Apex method.
+ b) Uses this or a specific user interaction (like a button click) to trigger the call.
+ c) Returns a Promise that you handle with .then() and .catch(). 
+ 
+ Promise ? :
+
+ A Promise is like a promise in real life.
+“I promise I’ll bring you lemon juice in 5 minutes.”
+You don’t have the juice right now, but you will either get it later, or something will go wrong.
+
+In JavaScript, a Promise is used to handle asynchronous code — code that takes time (like fetching data from a server).
+We then use .then() to handle the success case.
+We use .catch() to handle the error case.
+
+ -->
+<template>
+    <lightning-card title="Imperative Method">
+        <div style="height : 200px">
+            <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}>
+            </lightning-datatable>
+
+        </div>
+    </lightning-card>
+    
+</template>

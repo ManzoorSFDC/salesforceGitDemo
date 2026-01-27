@@ -1,0 +1,6 @@
+.card-title {
+     color: green;
+    font-size: 16px;
+    font-weight: 900;
+    opacity: 1;/* Adjust between 0 (transparent) and 1 (solid) */
+}

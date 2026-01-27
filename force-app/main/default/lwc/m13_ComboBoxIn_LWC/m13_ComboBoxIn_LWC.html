@@ -1,0 +1,28 @@
+<!--  
+  LIGHTNING COMBOBOX
+  1. Lightning Combobox is a UI component that lets users select one value from a list of options.
+  2. It is used to display a dropdown menu that contains predefined options.
+  3. It does NOT support multi-select.
+  4. The result of the selection is stored as the value of the input.
+-->
+
+<template>
+    <lightning-card title="ComboBox Demo">
+        <div class = "slds-p-around_medium">
+        <!-- Lightning Combobox -->
+        <lightning-combobox
+            label="Accounts"
+            value={value}
+            placeholder="Select Account"
+            options={options}
+            onchange={handleChange}>
+        </lightning-combobox>
+        <!-- Combobox ends here -->
+
+        <!-- Display selected value conditionally -->
+        <template if:true={isVisible}>
+            <p>Selected Value is: {value}</p>
+        </template>
+        </div>
+    </lightning-card>
+</template>

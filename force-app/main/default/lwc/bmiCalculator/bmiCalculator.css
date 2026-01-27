@@ -1,0 +1,74 @@
+/* :host is a tag that point out or cover the whole component , using this we are defining properties in variable form and we can use 
+these properties in our css styling */
+:host {
+    --dark-blue: #0b0d21;
+    --light-white: #fafafa;
+    --light-blue: #4f7df9;
+    --light-pink: #e91e63;
+    --dull-blue: #1d1e33;
+    --size-16: 16px;
+    --size-14: 14px;
+    --size-12: 12px;
+    --size-26: 26px;
+}
+
+.app {
+    /* vh- veiw height */
+    min-height: 100vh;
+    background-image: url(/sfsites/c/resource/BmiAppBackground);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box {
+    max-width: 420px;
+    text-align: center;
+    margin: auto;
+    padding: var(--size-16);
+    border-radius: 38px;
+    background-color: var(--dark-blue);
+    color: var(--light-white);
+}
+
+h1 {
+    font-size: 36px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.info-wrapper {
+    background-color: var(--dull-blue);
+    ;
+    padding: var(--size-16);
+    border-bottom-left-radius: 38px;
+    border-bottom-right-radius: 38px;
+    font-size: var(--size-14);
+    text-align-last: center;
+}
+
+h2 {
+    font-size: 26px;
+    color: var(--light-pink);
+}
+
+label {
+    font-size: 20px;
+    color: var(--light-white);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 8px;
+    color: var(--dull-blue);
+    font-size: var(--size-16);
+}
+
+.custom-button {
+    font-size: var(--size-16);
+    padding: var(--size-12);
+    background: #e91e63;
+    color: var(--light-white);
+    border-color: var(--light-pink);
+
+}

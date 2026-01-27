@@ -1,0 +1,16 @@
+    <!-- In tis component we are learning how to call child component in parent component -->
+    <template>
+        <lightning-card title="Parent Card">
+            <div class="slds-p-around_medium">
+            <!-- Calling child component  -->
+            <!-- here we are changing the property name directly  in the parent component-->
+            <!-- <c-e_-decorators-in-lwc_-child-component property-name="Manzoor by parent component"></c-e_-decorators-in-lwc_-child-component>  -->
+
+            <!-- Now we will create a button and on clicking of he button we will change the property -->
+            <c-e_-decorators-in-lwc_-child-component></c-e_-decorators-in-lwc_-child-component>
+            <lightning-button variant="brand" label="Click me" onclick={handleClick}></lightning-button>
+
+            </div>
+        </lightning-card>
+        
+    </template>

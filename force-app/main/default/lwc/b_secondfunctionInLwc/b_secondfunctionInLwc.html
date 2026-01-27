@@ -1,0 +1,25 @@
+<!-- 
+    1. lightning-button Component: 
+        This is the core component for creating buttons in LWC.
+        It provides the basic button structure and functionality.
+        You can customize it with different attributes to control its appearance. 
+    
+    2. Lightning Design System Styles:
+        lables : Primary button , Outline button
+        Variants: You can use the variant attribute to change the button's visual style (e.g., brand, outline, neutral, base, destructive).
+        Sizes: The size attribute lets you control the button's size (e.g., small, medium, large).
+        Icons: You can add icons to buttons using the iconName attribute (Lightning Design System icons must be used).
+        Text:  You can set the button's text label with the label attribute.
+        Colors and Text: You can also use CSS to customize button colors, text styles, and other visual attributes. 
+-->
+<template>
+    
+    <lightning-card title="Functions In LWC">
+        <div class="slds-p-around_medium">
+    <!-- Label is must when declares button otherwise button will not be visible -->
+    <lightning-button label="Primary Button"  variant="brand" size="small" onclick={handleClick}></lightning-button> 
+    <lightning-button label="Outline button"  variant="outline" size="medium" onclick={handleClick}></lightning-button>
+    <lightning-button label="Third button"  variant="destructive" size="Large" onclick={handleClick}></lightning-button> 
+    </div>
+    </lightning-card>
+</template>

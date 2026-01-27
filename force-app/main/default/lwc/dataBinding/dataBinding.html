@@ -1,0 +1,23 @@
+<template>
+    <lightning-card icon-name="custom:custom14">
+        <!-- Custom styled title -->
+        <span slot="title" class="card-title">
+            One Way data Binding 
+        </span>
+
+        <div class="slds-m-around_medium">
+            My name is {name}! </br>
+            The current time is {timeStamps}
+        </div>
+    </lightning-card>
+
+    <!-- Two Way data binding -->
+
+    <lightning-card icon-name="custom:custom14" title="Two way Data Binding">
+        <!-- Value is default text which shown in input field/ placeholder give instruction to user what he needs to do -->
+        <lightning-input  onchange={handleChange} type="text" label="Enter some text" placeholder="write text here ..." value="ACME Inc.">
+
+        </lightning-input>
+        <p>Updated Text is here : {typedText}</p>
+    </lightning-card>
+</template>

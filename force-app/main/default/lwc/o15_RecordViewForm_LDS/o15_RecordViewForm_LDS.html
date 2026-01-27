@@ -1,0 +1,30 @@
+<!--    LIGHTNING DATA SERVICE IN LWC
+  1. lightning Data Service is a centralized data caching framework.
+  2. We can use LDS in our lightning components to perform CRUD operations like create,read,update a record without use of any APEX code.
+  3. There are three types of LDS components 
+  a) Lightning-record-view-form => Displyas a read only form
+  b) lightning-record-edit-form => Displays an editable form
+  c) lightning-record-form => Supports edit,view,and read-ony modes.
+
+  A) Record View Form :
+    => Represents a record view layout that diiplays one or more fields , provided by lightning -output-field.
+ density = Auto/Compact
+-->
+<template>
+    <lightning-card title="RecordViewForm from LDS">
+        <div class="slds-p-around_medium">
+            <!-- Record View Form -->
+            <lightning-record-view-form
+                record-id={recordId}
+                object-api-name={objectApiName}
+                density="compact"> 
+
+                <lightning-output-field field-name={NameField}></lightning-output-field>
+                <lightning-output-field field-name={emailField}></lightning-output-field>
+                <lightning-output-field field-name={phoneField}></lightning-output-field>
+
+            </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>
+

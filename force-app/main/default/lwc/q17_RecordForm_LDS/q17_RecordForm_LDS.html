@@ -1,0 +1,89 @@
+<!-- RECORD FORM
+1) Creates an editable for or displayes form for a record. 
+2) Combines record view, edit, and create functionality into one single tag.
+3) Uses Lightning Data Service under the hood
+4) Require no apex code
+5) Automatically handles:
+ a) Data loading
+ b) Validation
+ c) DML operations
+ d) UI layout
+
+ KEY ATTRIBUTES :
+
+ Attribute	Description
+object-api-name	 - API name of the object (e.g., "Lead")
+record-id	     - ID of the record (used in view or edit mode)
+mode	         - "view", "edit", or "readonly",By default is create mode
+fields	         - Array of field API names (e.g., ['Name', 'Email'])
+layout-type (optional) - 	"Full" or "Compact" layout from Salesforce
+columns       	 - Number of columns to display
+onsuccess	     - JS handler for post-submit success
+onerror          - Handler for submit error
+
+onsubmit - once done with editing record and click on submit then this function is called
+
+🔥 Common JavaScript Events in LWC
+
+| Event Name    | Description                                                                                                       | Example Use Case                           |
+| ------------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| `onclick`     | Fires when a user clicks on an element                                                                            | Button clicked to submit a form            |
+| `onchange`    | Fires when the value of an input changes (after losing focus)                                                     | Updating a value in a text box             |
+| `oninput`     | Fires immediately as the user types or inputs data                                                                | Live validation or character counting      |
+| `onsuccess`   | Fired when a record operation (create/update) succeeds in `lightning-record-form` or `lightning-record-edit-form` | Show a success toast after saving a record |
+| `onerror`     | Fired when a record operation fails                                                                               | Show an error toast or handle failed save  |
+| `onload`      | Fires when a record form finishes loading                                                                         | Perform actions after form is ready        |
+| `onsubmit`    | Fired when a form is submitted                                                                                    | Intercept form data before it's saved      |
+| `onfocus`     | Fires when an input gains focus                                                                                   | Show tooltips or help text                 |
+| `onblur`      | Fires when an input loses focus                                                                                   | Validate input field                       |
+| `onmouseover` | Fires when mouse hovers over an element                                                                           | Show a tooltip or highlight UI             |
+| `onmouseout`  | Fires when mouse leaves an element                                                                                | Remove tooltip or visual effect            |
+| `keydown`     | Fires when a keyboard key is pressed down                                                                         | Detect key press (e.g. Enter or Escape)    |
+| `keyup`       | Fires when a keyboard key is released                                                                             | Trigger actions on key release             |
+
+In a <lightning-record-form> component in Salesforce Lightning Web Components (LWC), you have two primary options to control what fields appear in the form:
+✅ 1. 
+fields={fields}: You pass a JavaScript array of API field names from your .js file.
+You have full control over which fields appear.
+Use when: You want to control field order or only display specific fields.
+
+
+✅ 2.
+ Using a layout-type Attribute (e.g., layout-type="Compact")
+This option tells Salesforce to automatically pull fields based on the Compact or Full layout defined in the object's page layout settings.
+No need to specify fields manually.
+Salesforce uses the Compact Layout (or Full Layout) defined in the object's configuration.
+Use when: You want consistency with standard page layouts or don't want to hardcode field names.
+
+
+-->
+<template>
+    <lightning-card title="RecordForm - Edit Mode">
+        <div class="slds-p-around_medium">
+            <lightning-record-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                fields={fields}
+                columns="2"
+                mode="edit"
+                
+                onsubmit={handleSubmit}
+                onsuccess={handleSuccess}
+                onerror={handleError}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+
+    <!-- Record form in Default Mode -->
+    <!--
+    <lightning-card title="RecordForm - Default Mode">
+        <div class="slds-p-around_medium">
+            <lightning-record-form
+                object-api-name={objectApiName}
+                columns="2"
+                layout-type="Compact">
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+    -->
+</template>

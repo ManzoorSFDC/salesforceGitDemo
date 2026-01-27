@@ -1,0 +1,27 @@
+<!-- 
+1. How to implement LWC Combobox
+2. How to fetch All Accounts in LWC Combobox
+3. How to implement LWC Data-table.
+4. How to fetch the related Contacts detials of selected Accounts in ComboBox and display in LWC Data-table.
+Component Logic/Flow :
+
+a) User will be able to see all the Accounts of Saesforce org in LWC combobox and able to select any account from it.
+b) After Account selection from combobox , user will be  able to see its related contacts object detials of 
+-->
+<template>
+    <lightning-card title="ComboBox With DataTable">
+        <div class="slds-p-around_medium">
+        <!-- LWC ComboBox  -->
+        <lightning-combobox name="accountSelector" label="Available Accounts" value={value}
+            placeholder="Select an Account" options={options} onchange={handleChangeValue}>
+        </lightning-combobox>
+
+
+        <!-- Conditional display inside lightning-card body -->
+        <template if:true={isVisible}>
+            <!-- Contact Datatable starts here -->
+            <lightning-datatable key-field="Id" data={data} columns={columns}>
+                ></lightning-datatable>
+        </template></div>
+    </lightning-card>
+</template>

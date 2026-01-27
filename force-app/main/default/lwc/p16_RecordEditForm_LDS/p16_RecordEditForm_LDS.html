@@ -1,0 +1,21 @@
+<!-- RECORD EDIT FORM IN LDS
+  Represents a record edit layout that displays one or more fields using lightning-input-field.
+-->
+<template>
+    <lightning-card title="Record Edit Form In LDS">
+        <div class="slds-p-around_medium">
+            <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess} onerror={handleError}
+                density="compact">
+
+                <lightning-input-field field-name="Id" value={leadId}></lightning-input-field>
+                <lightning-input-field field-name={nameField}></lightning-input-field>
+                <lightning-input-field field-name={emailField}></lightning-input-field>
+                <lightning-input-field field-name={phoneField}></lightning-input-field>
+                <lightning-input-field field-name={comName}></lightning-input-field>
+
+                <lightning-button label="Submit" variant="brand" type="submit">
+                </lightning-button>
+            </lightning-record-edit-form>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<!-- 
+ 1. Decorators is a part of ECMA script(Modern javaScript) and used to add extra functionality in your function or methods.
+ 2. The lightning web components programming model has three decorators that add functionality to a property or fucntion
+ 
+ 3. There are three types of Decorators :
+    a) @api
+    b) @track
+    c) @wire
+
+ a) @api -
+   - To exposeo a public property , decorate a field with @api. public properties define the API for a component.
+   - public properties used in a tempalate changes,  the component rerenders.
+   - An owner component that uses a component in its markup can access the component's public properties via DOM properties.
+ -->
+<template>
+    
+    <lightning-card title="Child Card">
+      <div class="slds-p-around_medium">
+        {propertyName}
+        </div>
+    </lightning-card>
+    
+</template>

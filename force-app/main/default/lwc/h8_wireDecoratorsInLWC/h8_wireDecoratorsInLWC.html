@@ -1,0 +1,21 @@
+<!-- 
+ 1. To read salesforce data,lightning web components use a reactive wire service. When the wire service provisions data , the component rerenders.
+ 2. Component use @wire in their JavaScript class to specify a wire adapter or an apex method.
+ 3. The @wire decorator in LWC is used to read Salesforce data reactively from a server-side Apex method or from Lightning Data Service (LDS). It automatically fetches the data and re-fetches it if the input parameters change — this makes it powerful for building reactive UI components.
+ 4. for same requirement we can use imperetive method as well which we will see in the next tutorials
+ 5. The Lightning Data Table in LWC is a base Lightning component (<lightning-datatable>) used to display tabular data with features like sorting, checkbox selection, inline editing, and custom cell rendering. It's highly configurable and optimized for displaying records in a table format.
+  -->
+<template>
+    <lightning-card title="Wire Decorators In LWC">
+        <div class="slds-p-around_medium">
+            <!-- As we want to fetch data from org so we need to create a data table here -->
+             <lightning-datatable
+             key-field="Id"
+             data={data}
+             columns={columns}>
+            </lightning-datatable>     
+
+        </div>
+    </lightning-card>
+    
+</template>

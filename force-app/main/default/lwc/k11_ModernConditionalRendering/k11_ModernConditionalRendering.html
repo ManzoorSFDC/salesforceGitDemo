@@ -1,0 +1,46 @@
+<!--  ( Render DOM elements Conditionally )
+ 1. To render HTML conditioanlly , add the Lwc : if/elseif={property} and lwc :else directive to a nested <template> tag that encloses the conditional content.
+ 2. The lwc:if/elseif directives bind {property} to the tempalte ,removing and inserting DOM elements based on whether the data is a truthy or falsy value.
+ 3) this example has two properties property1 and property2
+
+    <template>
+        <template lwc : if = {property}> Statement1 </tempalte>
+        <template lwc : elseif = {property2}Statement2</tempalte>
+        <template lwc : else>Statement3</tempalte>
+    </template>
+
+Note * : If-true directive is going to be depricated so the new directive has launched by LWC for conditional renderening.
+
+-->
+
+<template>
+    <lightning-card title="lwc: If/ElseIf/Else={property}">
+        <div class="slds-p-around_medium">
+            <lightning-button 
+                variant="brand" 
+                label={dynamicButtonLabel} 
+                onclick={handleClick} 
+                icon-name="standard:case">
+            </lightning-button>
+
+            <template lwc:if={validator1}>
+                <p>{propertyfirst}</p>
+            </template>
+            <template lwc:if={validator2}>
+                <p>{propertySecond}</p>
+            </template>
+            <template lwc:if={validator3}>
+                <p>{propertyThird}</p>
+            </template>
+        </div>
+    </lightning-card>
+
+
+    <!-- <template lwc:if={validator}>
+        <lightning-card title="Card Visible">
+            {propertyName}
+        </lightning-card>
+
+    </template> -->
+    
+</template>
