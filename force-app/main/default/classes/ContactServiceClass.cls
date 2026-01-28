@@ -7,6 +7,7 @@ public with sharing class ContactServiceClass {
             WHERE Id = :contactId
             LIMIT 1
         ];
+        system.debug('Contact name : '+con.Name);
         return con.Name;
     }
 }
