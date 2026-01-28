@@ -8,6 +8,7 @@ public with sharing class ContactServiceClass {
             LIMIT 1
         ];
         system.debug('Contact name : '+con.Name);
+        system.debug('Contact name');
         return con.Name;
     }
 }
